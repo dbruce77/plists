@@ -1,0 +1,46 @@
+######################################################################################
+# This is to set Preferences for Microsoft One Drive                                 #
+# This file when configured can be used to customize what happens to a Mac OS device #
+# using OneDrive                                                                     #
+# plist location: ~/Library/Preferences/com.microsoft.OneDriveUpdater.plist          #
+# Domain com.microsoft.OneDriveUpdater                                               #
+# References: https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#
+######################################################################################
+
+
+
+#OpenAtLogin (Bool): When set to true, OneDrive will start automatically when
+#the user logs in on the Mac.
+<key>OpenAtLogin</key>
+<(Bool)/>
+
+
+#HideDockIcon (Bool): When set to true, this parameter hides the OneDrive dock
+#icon even when the application is running.
+<key>HideDockIcon</key>
+<(Bool)/>
+
+#TenantID (String): TenantID determines which accounts the default folder
+#location setting should apply to. Find your Office 365 tenant ID
+#DefaultFolderPath (String): DefaultFolder specifies the default folder location.
+#Mac App Store:
+#The path must already exist when users set up the sync client.
+#Standalone:
+#The path will be created on users' computers if it doesn't already exist.
+#Only with the Standalone sync client can you prevent users from changing the
+#location.
+
+<key>Tenants</key>
+<dict>
+<key>(TenantID)</key>
+<dict>
+<key>DefaultFolder</key>
+<string>(DefaultFolderPath)</string>
+</dict>
+</dict>
+
+#DisablePersonalSync (Bool): When set to true, this parameter prevents users
+#from adding or syncing personal accounts.
+
+<key>DisablePersonalSync</key>
+<(Bool)/>
